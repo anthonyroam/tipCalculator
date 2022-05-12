@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+    font-weight: bold;
+}
+
+.main__container {
+    min-height: 100vh;
+    max-height: 100%;
+    width: 100%;
+    background-color: var(--light-grayish-cyan);
+}
+
+.main__tittle {
+    letter-spacing: 0.5rem;
+    text-align: center;
+    color: var(--very-dark-cyan);
+    padding: 2rem 0;
+}
+
+.app__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.label__input {
+    padding-bottom: 0.75rem;
+    color: var(--dark-grayish-cyan);
+}
+
+.input {
+    padding: 0.25rem 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.number__input {
+    color: var(--very-dark-cyan);
+    text-align: end;
+}
+
+.number__input--dollar {
+    background: var(--very-light-grayish-cyan) url(../images/icon-dollar.svg) no-repeat;
+    background-position: 0.75em 50%;
+}
+
+.number__input--person {
+    background: var(--very-light-grayish-cyan) url(../images/icon-person.svg) no-repeat;
+    background-position: 0.75em 50%;
+}
+
+.tip__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.button {
+    border-radius: 5px;
+    font-size: 24px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tip__button {
+    width: 100%;
+    height: 3.5rem;
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+}
+
+.active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.tip__input {
+    text-align: center;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.computation__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    background-color: var(--very-dark-cyan);
+}
+
+.computation__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.computation__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.computation__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.computation__name {
+    color: var(--white);
+}
+
+.computation__description {
+    color: var(--very-light-grayish-cyan);
+}
+
+.computation__total {
+    font-size: 24px;
+    color: var(--strong-cyan);
+}
+
+.computation__button {
+    padding: 0.5rem 0;
+    border-radius: 5px;
+    background-color: var(--strong-cyan);
+}
+
+.error {
+    position: absolute;
+    right: 0;
+    color: #ff0000;
+}
+
+.button:hover {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    transition: all 0.3s;
+}
+
+.input:focus {
+    border: 1px solid var(--strong-cyan);
+    background-color: var(--white);
+}
+
+.error__border {
+    border: 1px solid #ff0000;
+}
+
+.error__border:focus {
+    border: 1px solid #ff0000;
+}
+
+@media (min-width: 481px) {
+    body {
+        font-size: 18px;
+    }
+
+    .main__container {
+        padding: 1rem 0;
+    }
+
+    .app__container {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        font-size: 18px;
+    }
+
+    .app__container {
+        width: 75%;
+        padding: 3rem 3rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        font-size: 16px;
+    }
+
+    .app__container {
+        flex-direction: row;
+        gap: 2rem;
+        min-height: 55vh;
+    }
+
+    .form {
+        width: 50%;
+        min-height: 45vh;
+    }
+
+    .tip__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .tip__input {
+        font-size: 1rem;
+    }
+
+    .computation__container {
+        width: 50%;
+        min-height: 45vh;   
+    }
+}
+
+@media (min-width: 1201px) {
+    body {
+        font-size: 18px;
+    }
+}

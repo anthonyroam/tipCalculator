@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tip calculator app</title>
+</head>
+<body>
+    <main class="main__container">
+        <h1 class="main__tittle">SPLI<br>TTER</h1>
+        <form class="app__container">
+            <div action="#" class="form">
+                <div class="form__item">
+                    <label for="bill__input" class="label__input">Bill</label>
+                    <input type="number" class="input number__input number__input--dollar" id="bill__input" placeholder="0">
+                </div>
+                <div class="form__item">
+                    <label for="tip__input" class="label__input">Select Tip %</label>
+                    <div class="tip__container">
+                        <button type="button" class="button tip__button" data-tip="0.05">5%</button>
+                        <button type="button" class="button tip__button" data-tip="0.10">10%</button>
+                        <button type="button" class="button tip__button" data-tip="0.15">15%</button>
+                        <button type="button" class="button tip__button" data-tip="0.25">25%</button>
+                        <button type="button" class="button tip__button" data-tip="0.50">50%</button>
+                        <input type="number" class="button input tip__input tip__button" id="tip__input" data-tip="0" placeholder="Custom">
+                    </div>
+                </div>
+                <div class="form__item" id="form__item--people">
+                    <label for="people__input" class="label__input">Number of People</label>
+                    <input type="number" class="input number__input number__input--person" id="people__input" placeholder="0">
+                </div>
+            </div>
+            <section class="computation__container">
+                <div class="computation__items">
+                    <div class="computation__item">
+                        <div class="computation__text">
+                            <h3 class="computation__name">Tip Account</h3>
+                            <p class="computation__description">/ person</p>
+                        </div>
+                        <div class="computation__total" id="tip__account">$0.00</div>
+                    </div>
+                    <div class="computation__item">
+                        <div class="computation__text">
+                            <h3 class="computation__name">Total</h3>
+                            <p class="computation__description">/ person</p>
+                        </div>
+                        <div class="computation__total" id="tip__total">$0.00</div>
+                    </div>
+                </div>
+                <button type="reset" class="button computation__button" id="computation__button">RESET</button>
+            </section>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
