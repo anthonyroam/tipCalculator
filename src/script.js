@@ -21,18 +21,16 @@ const isClicked = button => button.className === "button tip__button active";
 const toogleClickedButton = function (array) {
     const clickedButton = array.filter(isClicked);
     if (clickedButton[0] !== undefined) clickedButton[0].classList.toggle("active");
-}
+};
 
-const buttonEventHandler = buttonsArray.map((btn, _, buttons) => {
-    btn.addEventListener("click", e => {
-        toogleClickedButton(buttons);
-        btn.classList.toggle("active");
-        tipInput.value = "";
-        tipSelected = e.target
-        tipCalculator.tip = tipSelected.dataset.tip;
-    })
+const buttonContainer = document.querySelector(".tip__container");
+buttonContainer.addEventListener("click", e => {
+    toogleClickedButton(buttonsArray);
+    let buttonClicked = e.target;
+    buttonClicked.classList.toggle("active");
+    tipInput.value = "";
+    tipCalculator.tip = buttonClicked.dataset.tip;
 });
-
 
 const parentPeopleInput = document.querySelector("#form__item--people");
 const errorMessage = document.createElement("p");
@@ -58,7 +56,7 @@ const tipCalculator = {
         this.people = peopleInput.value;
        
         if (this.people === "0") {
-            peopleInput.classList.add("error__border")
+            peopleInput.classList.add("error__border");
             parentPeopleInput.insertBefore(errorMessage, peopleInput);
             return 
         } else {
@@ -67,7 +65,7 @@ const tipCalculator = {
         }
         
         if (this.people === "") return;
-
+        
         let tipAccount = (this.bill / this.people) * this._tip; 
         let tipTotal = (this.bill / this.people) + tipAccount;
 
@@ -90,6 +88,7 @@ const tipCalculator = {
     reset() {
         billInput.value = "";
         peopleInput.value = "";
+        tipInput.value = "";
         this.tip = 0;
         this.renderResult(0,0);
         toogleClickedButton(buttonsArray);

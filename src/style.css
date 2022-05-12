@@ -227,6 +227,7 @@
     .app__container {
         flex-direction: row;
         gap: 2rem;
+        width: 70%;
         min-height: 55vh;
     }
 
@@ -252,5 +253,9 @@
 @media (min-width: 1201px) {
     body {
         font-size: 18px;
+    }
+
+    .app__container {
+        width: 65%;
     }
 }

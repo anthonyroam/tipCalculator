@@ -10,8 +10,8 @@
 <body>
     <main class="main__container">
         <h1 class="main__tittle">SPLI<br>TTER</h1>
-        <form class="app__container">
-            <div action="#" class="form">
+        <div class="app__container">
+            <form action="#" class="form">
                 <div class="form__item">
                     <label for="bill__input" class="label__input">Bill</label>
                     <input type="number" class="input number__input number__input--dollar" id="bill__input" placeholder="0">
@@ -31,7 +31,7 @@
                     <label for="people__input" class="label__input">Number of People</label>
                     <input type="number" class="input number__input number__input--person" id="people__input" placeholder="0">
                 </div>
-            </div>
+            </form>
             <section class="computation__container">
                 <div class="computation__items">
                     <div class="computation__item">
@@ -49,9 +49,9 @@
                         <div class="computation__total" id="tip__total">$0.00</div>
                     </div>
                 </div>
-                <button type="reset" class="button computation__button" id="computation__button">RESET</button>
+                <button class="button computation__button" id="computation__button">RESET</button>
             </section>
-        </form>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
